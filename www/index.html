@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>senna. 🌿</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<!-- ===== BERANDA ===== -->
+<div class="page active" id="page-beranda">
+    <div class="page-wrap">
+
+        <header class="site-header">
+            <div class="logo-area">
+                <span class="logo-duck">🦆</span>
+                <span class="logo-text">Senna.</span>
+            </div>
+            <div class="header-time" id="headerTime"></div>
+        </header>
+
+        <!-- Greeting Card with avatar -->
+        <div class="greeting-card">
+            <div class="avatar-wrap" id="avatarWrapHome">🐥</div>
+            <div class="greet-info">
+                <div class="greet-name">haii, senna~ ✿</div>
+                <div class="greet-sub" id="greetSub">ayo semangat belajar hari ini!</div>
+            </div>
+            <div class="greet-level" id="greetLevel">Lv.1</div>
+        </div>
+
+        <!-- Word of Day -->
+        <div class="wod-card">
+            <div class="wod-header">
+                <span class="wod-label">📌 kata hari ini</span>
+                <span class="wod-date" id="wodDate"></span>
+            </div>
+            <div class="wod-inner">
+                <div class="wod-char" id="wodChar">学</div>
+                <div class="wod-data">
+                    <div class="wod-pinyin" id="wodPinyin">xuéxí</div>
+                    <div class="wod-meaning" id="wodMeaning">belajar</div>
+                </div>
+                <button class="wod-quiz-btn" onclick="goToQuizFromWod()">quiz! →</button>
+            </div>
+        </div>
+
+        <!-- Streak Calendar -->
+        <div class="streak-card">
+            <div class="streak-header">
+                <span class="streak-title">🔥 streak belajar</span>
+                <span class="streak-count" id="streakCount">0 hari</span>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+        </div>
+
+        <!-- Belajar section -->
+        <div class="section-heading">📚 belajar</div>
+        <div class="app-grid-2">
+            <div class="app-tile" onclick="openPanel('hsk')">
+                <div class="tile-badge" id="hskBadge">48 kata</div>
+                <div class="tile-icon">🐌</div>
+                <div class="tile-name">Kosakata</div>
+                <div class="tile-sub">HSK 4–5</div>
+                <div class="tile-progress-wrap">
+                    <div class="tile-progress-track"><div class="tile-progress-fill" id="hskProgress" style="width:0%"></div></div>
+                    <div class="tile-progress-label" id="hskProgressLabel">mulai belajar~</div>
+                </div>
+            </div>
+            <div class="app-tile" onclick="openPanel('kwn')">
+                <div class="tile-badge">3 teks</div>
+                <div class="tile-icon">🐥</div>
+                <div class="tile-name">课文</div>
+                <div class="tile-sub">teks pelajaran</div>
+                <div class="tile-progress-wrap">
+                    <div class="tile-progress-track"><div class="tile-progress-fill" id="kwnProgress" style="width:0%"></div></div>
+                    <div class="tile-progress-label" id="kwnProgressLabel">belum dibaca~</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-grid-full">
+            <div class="app-tile-wide" onclick="openPanel('quiz')" style="margin-bottom:10px;">
+                <div class="tile-wide-icon">🧠</div>
+                <div class="tile-wide-info">
+                    <div class="tile-wide-name">Quiz 汉字</div>
+                    <div class="tile-wide-sub">HSK 4–5 · pilihan ganda · 10 soal/sesi</div>
+                </div>
+                <div class="tile-wide-right">
+                    <div class="tile-wide-stat" id="homeStreak">🔥 0</div>
+                    <div class="tile-wide-stat-label">streak</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hiburan section -->
+        <div class="section-heading">🎉 hiburan</div>
+        <div class="app-grid-2">
+            <div class="app-tile" onclick="openPanel('music')">
+                <div class="tile-icon">🐸</div>
+                <div class="tile-name">Music</div>
+                <div class="tile-sub" id="homeMusicSub">10 lagu</div>
+            </div>
+            <div class="app-tile" onclick="openPanel('anime')">
+                <div class="tile-icon">🌸</div>
+                <div class="tile-name">Anime</div>
+                <div class="tile-sub">8 fav</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div class="page" id="page-about">
+    <div class="page-wrap">
+        <header class="site-header">
+            <div class="logo-area">
+                <span class="logo-duck">🐥</span>
+                <span class="logo-text">About Me</span>
+            </div>
+            <div class="header-time" id="headerTime2"></div>
+        </header>
+
+        <div class="about-photo-ring">
+            <div class="about-photo-outer">
+                <div class="about-photo-inner" id="aboutPhotoInner">🐥</div>
+            </div>
+            <div class="about-photo-badge">✨</div>
+        </div>
+
+        <div class="about-name-block">
+            <div class="about-name">senna.</div>
+            <div class="about-handle">alwyshappy · 开开心心 🌿</div>
+        </div>
+
+        <label class="about-photo-upload" for="photoUpload">📷 ganti foto profil</label>
+        <input type="file" id="photoUpload" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)">
+
+        <div class="about-bio-card">
+            <div class="about-bio-text">
+                haii! aku senna 🦆<br>
+                suka hal-hal yang lucu, dengerin musik sambil rebahan,<br>
+                dan belajar mandarin pelan-pelan~
+            </div>
+            <div class="about-tags">
+                <span class="tag">🎵 musik</span>
+                <span class="tag">📖 mandarin</span>
+                <span class="tag">🌸 anime</span>
+                <span class="tag">🎨 desain</span>
+                <span class="tag">🐸 katak</span>
+            </div>
+        </div>
+
+        <div class="about-stats">
+            <div class="about-stat-card">
+                <div class="about-stat-num" id="aboutXP">0</div>
+                <div class="about-stat-label">total XP ⭐</div>
+            </div>
+            <div class="about-stat-card">
+                <div class="about-stat-num" id="aboutStreak">0</div>
+                <div class="about-stat-label">best streak 🔥</div>
+            </div>
+            <div class="about-stat-card">
+                <div class="about-stat-num" id="aboutAccuracy">0%</div>
+                <div class="about-stat-label">akurasi quiz</div>
+            </div>
+        </div>
+
+        <div class="about-socials">
+            <a href="#" class="social-pill">ig</a>
+            <a href="#" class="social-pill">twt</a>
+            <a href="#" class="social-pill">github</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MUSIC PANEL ===== -->
+<div class="side-panel" id="panel-music">
+    <div class="panel-header">
+        <button class="panel-back" onclick="closePanel('music')">← kembali</button>
+        <h2 class="panel-title">🎵 music</h2>
+    </div>
+    <div class="music-layout">
+        <div class="playlist-section">
+            <div class="playlist-header">
+                <span class="playlist-title-text">playlist</span>
+                <span class="playlist-stats" id="playlistStats">loading...</span>
+            </div>
+            <div class="playlist-container" id="playlistContainer"></div>
+            <div class="playlist-actions">
+                <button class="action-pill" id="shuffleBtn" onclick="toggleShuffle()">🔀 shuffle</button>
+                <button class="action-pill" id="repeatBtn" onclick="toggleRepeat()">🔁 repeat</button>
+            </div>
+        </div>
+        <div class="player-section">
+            <div class="vinyl-wrap">
+                <div class="vinyl" id="vinylRecord">
+                    <div class="vinyl-label">
+                        <img src="" alt="cover" id="nowPlayingCover" class="vinyl-cover">
+                    </div>
+                    <div class="vinyl-groove g1"></div>
+                    <div class="vinyl-groove g2"></div>
+                    <div class="vinyl-groove g3"></div>
+                    <div class="vinyl-hole"></div>
+                </div>
+                <div class="vinyl-shadow"></div>
+            </div>
+            <div class="track-info" id="eqWrapper">
+                <div class="eq-row">
+                    <span class="eq-badge">NOW PLAYING</span>
+                    <div class="eq-bars" id="eqBars">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <h3 class="track-name" id="nowPlayingTitle">Iris</h3>
+                <p class="track-artist-name" id="nowPlayingArtist">Goo Goo Dolls</p>
+                <p class="track-album-name" id="nowPlayingAlbum">Dizzy Up The Girl (1998)</p>
+            </div>
+            <div class="player-controls">
+                <div class="progress-row">
+                    <span class="t-stamp" id="currentTime">0:00</span>
+                    <div class="progress-track" id="progressBar" onclick="seek(event)">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-thumb"></div>
+                    </div>
+                    <span class="t-stamp" id="totalTime">0:00</span>
+                </div>
+                <div class="ctrl-row">
+                    <button class="ctrl-btn" onclick="prevTrack()">⏮</button>
+                    <button class="ctrl-btn ctrl-play" id="playPauseBtn" onclick="togglePlay()">▶</button>
+                    <button class="ctrl-btn" onclick="nextTrack()">⏭</button>
+                </div>
+                <div class="vol-row">
+                    <span id="volumeIcon">🔊</span>
+                    <div class="vol-track">
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                        <div class="vol-fill" id="volumeLevel" style="width:70%"></div>
+                    </div>
+                    <span class="vol-pct" id="volumePercent">70%</span>
+                    <button class="vol-mute" onclick="toggleMute()">🔇</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="audioPlayer" preload="metadata"></audio>
+</div>
+
+<!-- ===== HSK PANEL ===== -->
+<div class="side-panel" id="panel-hsk">
+    <div class="panel-header">
+        <button class="panel-back" onclick="closePanel('hsk')">← kembali</button>
+        <h2 class="panel-title">📝 Kosakata HSK</h2>
+    </div>
+    <div class="full-panel">
+        <div class="search-wrapper">
+            <input type="text" class="search-input" id="hskSearch" placeholder="🔍 cari kata..." oninput="filterHsk()">
+        </div>
+        <div class="lesson-list" id="hskList"></div>
+        <div class="lesson-content-area" id="hskContentArea">
+            <div class="empty-state">🐸 pilih kata di samping untuk belajar~</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== KEWEN PANEL ===== -->
+<div class="side-panel" id="panel-kwn">
+    <div class="panel-header">
+        <button class="panel-back" onclick="closePanel('kwn')">← kembali</button>
+        <h2 class="panel-title">📝 课文</h2>
+    </div>
+    <div class="full-panel">
+        <div class="search-wrapper">
+            <input type="text" class="search-input" id="kewenSearch" placeholder="🔍 cari kata dalam 课文..." oninput="filterKwn()">
+        </div>
+        <div class="lesson-list" id="kwnList"></div>
+        <div class="lesson-content-area" id="kwnContentArea">
+            <div class="empty-state">🦆 pilih 课文 di samping untuk membaca~</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== ANIME PANEL ===== -->
+<div class="side-panel" id="panel-anime">
+    <div class="panel-header">
+        <button class="panel-back" onclick="closePanel('anime')">← kembali</button>
+        <h2 class="panel-title">🌸 My Fav Anime</h2>
+    </div>
+    <div class="anime-grid" id="animeGrid"></div>
+</div>
+
+<!-- ===== QUIZ PANEL ===== -->
+<div class="side-panel" id="panel-quiz">
+    <div class="panel-header">
+        <button class="panel-back" onclick="closePanel('quiz'); stopQuiz()">← kembali</button>
+        <h2 class="panel-title">🧠 Quiz</h2>
+        <div class="panel-header-extra quiz-header-stats">
+            <span class="qh-pill fire" id="qhStreak">🔥 0</span>
+            <span class="qh-pill xp" id="qhXP">⭐ 0 XP</span>
+        </div>
+    </div>
+    <div class="xp-bar-wrap">
+        <span class="xp-level" id="xpLevel">Lv.1</span>
+        <div class="xp-bar-track">
+            <div class="xp-bar-fill" id="xpBarFill" style="width:0%"></div>
+            <span class="xp-bar-label" id="xpBarLabel">0 / 100 XP</span>
+        </div>
+    </div>
+
+    <!-- Home -->
+    <div id="quizHome">
+        <div class="quiz-home-hero">
+            <div class="qhero-char" id="qheroChar">学</div>
+            <div class="qhero-text">
+                <p class="qhero-title">HSK 4–5 · Pilihan Ganda</p>
+                <p class="qhero-sub">tebak arti & pinyin · 10 soal per sesi</p>
+            </div>
+        </div>
+        <div class="quiz-submode-row">
+            <button class="submode-pill active" id="sm-both" onclick="setSubMode('both')">🎲 Acak</button>
+            <button class="submode-pill" id="sm-meaning" onclick="setSubMode('meaning')">🇮🇩 Arti</button>
+            <button class="submode-pill" id="sm-pinyin" onclick="setSubMode('pinyin')">🔤 Pinyin</button>
+        </div>
+        <button class="quiz-start-btn" onclick="startQuiz()">
+            <span>mulai belajar</span><span class="start-arrow">→</span>
+        </button>
+        <div class="quiz-summary-bar">
+            <div class="qs-item"><span class="qs-num" id="statTotal">0</span><span class="qs-label">dijawab</span></div>
+            <div class="qs-div"></div>
+            <div class="qs-item"><span class="qs-num" id="statCorrect">0</span><span class="qs-label">benar</span></div>
+            <div class="qs-div"></div>
+            <div class="qs-item"><span class="qs-num" id="statAccuracy">0%</span><span class="qs-label">akurasi</span></div>
+            <div class="qs-div"></div>
+            <div class="qs-item"><span class="qs-num" id="statBestStreak">0</span><span class="qs-label">streak 🔥</span></div>
+        </div>
+    </div>
+
+    <!-- Arena -->
+    <div id="quizArena" style="display:none;">
+        <div class="arena-top-row">
+            <div class="lives-row" id="livesRow"></div>
+            <div class="arena-streak" id="arenaStreak">🔥 0</div>
+        </div>
+        <div class="quiz-progress-row">
+            <div class="quiz-prog-track"><div class="quiz-prog-fill" id="quizProgFill" style="width:0%"></div></div>
+            <span class="quiz-prog-label" id="quizProgLabel">1 / 10</span>
+        </div>
+        <div class="quiz-type-badge" id="quizTypeBadge">tebak artinya</div>
+        <div class="quiz-q-card" id="quizQCard"></div>
+        <div class="mc-options" id="mcOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback" style="display:none;"></div>
+        <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuestion()" style="display:none;">soal berikutnya →</button>
+        <button class="quiz-skip-btn" id="quizSkipBtn" onclick="skipQuestion()">lewati</button>
+    </div>
+
+    <!-- Result -->
+    <div id="quizResult" style="display:none;">
+        <div class="result-card">
+            <div class="result-emoji" id="resultEmoji">🎉</div>
+            <h2 class="result-title" id="resultTitle">Sesi Selesai!</h2>
+            <p class="result-sub" id="resultSub"></p>
+            <div class="result-stats">
+                <div class="rs-item"><span class="rs-num green" id="rCorrect">0</span><span class="rs-label">benar ✅</span></div>
+                <div class="rs-item"><span class="rs-num red" id="rWrong">0</span><span class="rs-label">salah ❌</span></div>
+                <div class="rs-item"><span class="rs-num" id="rXP">+0</span><span class="rs-label">XP ⭐</span></div>
+            </div>
+            <div id="wrongReview" style="display:none;">
+                <p class="review-title">📖 yang tadi salah:</p>
+                <div class="review-list" id="reviewList"></div>
+            </div>
+            <div class="result-actions">
+                <button class="result-btn primary" onclick="startQuiz()">🔄 main lagi</button>
+                <button class="result-btn" onclick="showQuizHome()">🏠 home</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Panel overlay -->
+<div class="panel-overlay" id="panelOverlay" onclick="closeAllPanels()"></div>
+
+<!-- ===== MINI PLAYER (always visible) ===== -->
+<div class="mini-player" id="miniPlayer">
+    <div class="mini-player-inner" onclick="openPanel('music')">
+        <div class="mp-wave" id="mpWave">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <img src="" alt="cover" class="mp-cover" id="mpCover"
+             onerror="this.src='https://placehold.co/34x34/6bab6b/ffffff?text=♪'">
+        <div class="mp-info">
+            <div class="mp-title" id="mpTitle">Iris</div>
+            <div class="mp-artist" id="mpArtist">Goo Goo Dolls</div>
+        </div>
+        <div class="mp-controls" onclick="event.stopPropagation()">
+            <button class="mp-btn" onclick="prevTrack()">⏮</button>
+            <button class="mp-btn play" id="mpPlay" onclick="togglePlay()">▶</button>
+            <button class="mp-btn" onclick="nextTrack()">⏭</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== BOTTOM NAV ===== -->
+<nav class="bottom-nav">
+    <div class="nav-item active" id="nav-beranda" onclick="switchPage('beranda')">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-label">beranda</div>
+        <div class="nav-dot"></div>
+    </div>
+    <div class="nav-item" id="nav-belajar" onclick="switchPage('belajar')">
+        <div class="nav-icon">📖</div>
+        <div class="nav-label">belajar</div>
+        <div class="nav-dot"></div>
+    </div>
+    <div class="nav-item" id="nav-quiz" onclick="openPanel('quiz')">
+        <div class="nav-icon">🧠</div>
+        <div class="nav-label">quiz</div>
+        <div class="nav-dot"></div>
+    </div>
+    <div class="nav-item" id="nav-music" onclick="openPanel('music')">
+        <div class="nav-icon">🎵</div>
+        <div class="nav-label">musik</div>
+        <div class="nav-dot"></div>
+    </div>
+    <div class="nav-item" id="nav-about" onclick="switchPage('about')">
+        <div class="nav-icon">🐥</div>
+        <div class="nav-label">profil</div>
+        <div class="nav-dot"></div>
+    </div>
+</nav>
+
+<script src="./scripts.js"></script>
+</body>
+</html>
