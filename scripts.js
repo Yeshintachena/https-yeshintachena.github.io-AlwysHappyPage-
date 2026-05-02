@@ -10,8 +10,8 @@ const playlist = [
     { title:"Cancer", artist:"My Chemical Romance", album:"The Black Parade", year:"2006", src:"musik/cancer.mp3", cover:"https://upload.wikimedia.org/wikipedia/en/e/ea/Blackparadecover.jpg", duration:"2:22" },
     { title:"The World Is Ugly", artist:"My Chemical Romance", album:"Conventional Weapons", year:"2013", src:"musik/the-world-is-ugly.mp3", cover:"https://i.scdn.co/image/ab67616d0000b273a67cf0d53d5f2170077e8ef5", duration:"4:54" },
     { title:"December", artist:"Neck Deep", album:"Life's Not Out to Get You", year:"2015", src:"musik/december.mp3", cover:"https://f4.bcbits.com/img/a2588659074_16.jpg", duration:"3:38" },
-    { title:"Multo", artist:"Cup of Joe", album:"Silakbo", year:"2025", src:"musik/multo.mp3", cover:"https://upload.wikimedia.org/wikipedia/en/9/9f/Multo_%282024%29_by_Cup_of_Joe_cover_art.jpg", duration:"4:01" },
-    { title:"End of Beginning", artist:"Joe Keery", album:"Decide", year:"2022", src:"musik/end-of-beginning.mp3", cover:"https://asset.kompas.com/crops/sFzKxBizDInGQTsbjMWtm-Vvxus=/117x0:1024x605/1200x1200/data/photo/2024/04/24/6628b81a54245.jpg", duration:"2:40" },
+    { title:"Multo", artist:"Cup of Joe", album:"Silakbo", year:"2025", src:"musik/Multo.mp3", cover:"https://upload.wikimedia.org/wikipedia/en/9/9f/Multo_%282024%29_by_Cup_of_Joe_cover_art.jpg", duration:"4:01" },
+    { title:"End of Beginning", artist:"Joe Keery", album:"Decide", year:"2022", src:"musik/End-of-beginning.mp3", cover:"https://asset.kompas.com/crops/sFzKxBizDInGQTsbjMWtm-Vvxus=/117x0:1024x605/1200x1200/data/photo/2024/04/24/6628b81a54245.jpg", duration:"2:40" },
     { title:"Back To Friends", artist:"Sombr", album:"I Barely Know Her", year:"2025", src:"musik/back-to-friends.mp3", cover:"https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Official_single_cover_of_%22Back_to_Friends%22_by_Sombr.jpeg/250px-Official_single_cover_of_%22Back_to_Friends%22_by_Sombr.jpeg", duration:"3:15" }
 ];
 
